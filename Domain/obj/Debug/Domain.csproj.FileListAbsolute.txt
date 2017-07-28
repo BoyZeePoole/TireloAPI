@@ -1,0 +1,5 @@
+C:\applications\TireloAPI\Domain\bin\Debug\Domain.dll
+C:\applications\TireloAPI\Domain\bin\Debug\Domain.pdb
+C:\applications\TireloAPI\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\applications\TireloAPI\Domain\obj\Debug\Domain.dll
+C:\applications\TireloAPI\Domain\obj\Debug\Domain.pdb

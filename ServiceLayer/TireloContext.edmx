@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TireloModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="ValidPeriod" Type="int" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Surname" Type="varchar(max)" />
+          <Property Name="Initials" Type="varchar(max)" />
+          <Property Name="CoyNumber" Type="varchar(max)" />
+          <Property Name="fk_Role_Id" Type="uniqueidentifier" />
+          <Property Name="fk_Section_Id" Type="uniqueidentifier" />
+          <Property Name="fk_Manager_Id" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="PersonCourses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fk_Person_Id" Type="uniqueidentifier" />
+          <Property Name="fk_Course_Id" Type="uniqueidentifier" />
+          <Property Name="Date_Registered" Type="datetime" />
+          <Property Name="Date_Completed" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+        </EntityType>
+        <Association Name="FK_Person_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+          <End Role="Person1" Type="Self.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person1">
+              <PropertyRef Name="fk_Manager_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="fk_Role_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Section">
+          <End Role="Section" Type="Self.Section" Multiplicity="0..1" />
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Section">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="fk_Section_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonCourses_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="PersonCourses" Type="Self.PersonCourses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonCourses">
+              <PropertyRef Name="fk_Course_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonCourses_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+          <End Role="PersonCourses" Type="Self.PersonCourses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonCourses">
+              <PropertyRef Name="fk_Person_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TireloModelStoreContainer">
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonCourses" EntityType="Self.PersonCourses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Section" EntityType="Self.Section" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Person_Person" Association="Self.FK_Person_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Person1" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Role" Association="Self.FK_Person_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Section" Association="Self.FK_Person_Section">
+            <End Role="Section" EntitySet="Section" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonCourses_Course" Association="Self.FK_PersonCourses_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="PersonCourses" EntitySet="PersonCourses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonCourses_Person" Association="Self.FK_PersonCourses_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonCourses" EntitySet="PersonCourses" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TireloModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ValidPeriod" Type="Int32" />
+          <NavigationProperty Name="PersonCourses" Relationship="TireloModel.FK_PersonCourses_Course" FromRole="Course" ToRole="PersonCours" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="People" Relationship="TireloModel.FK_Person_Role" FromRole="Role" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="People" Relationship="TireloModel.FK_Person_Section" FromRole="Section" ToRole="Person" />
+        </EntityType>
+        <EntityContainer Name="TireloContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Courses" EntityType="Self.Course" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="Sections" EntityType="Self.Section" />
+          <EntitySet Name="PersonCourses" EntityType="TireloModel.PersonCours" />
+          <AssociationSet Name="FK_PersonCourses_Course" Association="TireloModel.FK_PersonCourses_Course">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="PersonCours" EntitySet="PersonCourses" />
+          </AssociationSet>
+          <EntitySet Name="People" EntityType="TireloModel.Person" />
+          <AssociationSet Name="FK_Person_Person" Association="TireloModel.FK_Person_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Person1" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Role" Association="TireloModel.FK_Person_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Section" Association="TireloModel.FK_Person_Section">
+            <End Role="Section" EntitySet="Sections" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonCourses_Person" Association="TireloModel.FK_PersonCourses_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonCours" EntitySet="PersonCourses" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="PersonCours">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="fk_Person_Id" Type="Guid" />
+          <Property Name="fk_Course_Id" Type="Guid" />
+          <Property Name="Date_Registered" Type="DateTime" Precision="3" />
+          <Property Name="Date_Completed" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Course" Relationship="TireloModel.FK_PersonCourses_Course" FromRole="PersonCours" ToRole="Course" />
+          <NavigationProperty Name="Person" Relationship="TireloModel.FK_PersonCourses_Person" FromRole="PersonCours" ToRole="Person" />
+        </EntityType>
+        <Association Name="FK_PersonCourses_Course">
+          <End Type="TireloModel.Course" Role="Course" Multiplicity="0..1" />
+          <End Type="TireloModel.PersonCours" Role="PersonCours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonCours">
+              <PropertyRef Name="fk_Course_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Initials" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CoyNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fk_Role_Id" Type="Guid" />
+          <Property Name="fk_Section_Id" Type="Guid" />
+          <Property Name="fk_Manager_Id" Type="Guid" />
+          <NavigationProperty Name="Subs" Relationship="TireloModel.FK_Person_Person" FromRole="Person" ToRole="Person1" />
+          <NavigationProperty Name="Manager" Relationship="TireloModel.FK_Person_Person" FromRole="Person1" ToRole="Person" />
+          <NavigationProperty Name="Role" Relationship="TireloModel.FK_Person_Role" FromRole="Person" ToRole="Role" />
+          <NavigationProperty Name="Section" Relationship="TireloModel.FK_Person_Section" FromRole="Person" ToRole="Section" />
+          <NavigationProperty Name="PersonCourses" Relationship="TireloModel.FK_PersonCourses_Person" FromRole="Person" ToRole="PersonCours" />
+        </EntityType>
+        <Association Name="FK_Person_Person">
+          <End Type="TireloModel.Person" Role="Person" Multiplicity="0..1" />
+          <End Type="TireloModel.Person" Role="Person1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person1">
+              <PropertyRef Name="fk_Manager_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Role">
+          <End Type="TireloModel.Role" Role="Role" Multiplicity="0..1" />
+          <End Type="TireloModel.Person" Role="Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="fk_Role_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Section">
+          <End Type="TireloModel.Section" Role="Section" Multiplicity="0..1" />
+          <End Type="TireloModel.Person" Role="Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Section">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="fk_Section_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonCourses_Person">
+          <End Type="TireloModel.Person" Role="Person" Multiplicity="0..1" />
+          <End Type="TireloModel.PersonCours" Role="PersonCours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonCours">
+              <PropertyRef Name="fk_Person_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TireloModelStoreContainer" CdmEntityContainer="TireloContext">
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="TireloModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="ValidPeriod" ColumnName="ValidPeriod" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="TireloModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sections">
+            <EntityTypeMapping TypeName="TireloModel.Section">
+              <MappingFragment StoreEntitySet="Section">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonCourses">
+            <EntityTypeMapping TypeName="TireloModel.PersonCours">
+              <MappingFragment StoreEntitySet="PersonCourses">
+                <ScalarProperty Name="Date_Completed" ColumnName="Date_Completed" />
+                <ScalarProperty Name="Date_Registered" ColumnName="Date_Registered" />
+                <ScalarProperty Name="fk_Course_Id" ColumnName="fk_Course_Id" />
+                <ScalarProperty Name="fk_Person_Id" ColumnName="fk_Person_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="TireloModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="fk_Manager_Id" ColumnName="fk_Manager_Id" />
+                <ScalarProperty Name="fk_Section_Id" ColumnName="fk_Section_Id" />
+                <ScalarProperty Name="fk_Role_Id" ColumnName="fk_Role_Id" />
+                <ScalarProperty Name="CoyNumber" ColumnName="CoyNumber" />
+                <ScalarProperty Name="Initials" ColumnName="Initials" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

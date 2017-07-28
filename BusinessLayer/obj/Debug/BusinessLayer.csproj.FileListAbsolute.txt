@@ -1,0 +1,11 @@
+C:\applications\TireloAPI\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\applications\TireloAPI\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\applications\TireloAPI\BusinessLayer\bin\Debug\Domain.dll
+C:\applications\TireloAPI\BusinessLayer\bin\Debug\ServiceLayer.dll
+C:\applications\TireloAPI\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\applications\TireloAPI\BusinessLayer\bin\Debug\Domain.pdb
+C:\applications\TireloAPI\BusinessLayer\bin\Debug\ServiceLayer.pdb
+C:\applications\TireloAPI\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\applications\TireloAPI\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\applications\TireloAPI\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\applications\TireloAPI\BusinessLayer\obj\Debug\BusinessLayer.pdb

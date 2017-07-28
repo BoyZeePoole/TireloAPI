@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TireloModelStoreContainer" CdmEntityContainer="TireloContext">
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="TireloModel.Course">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="ValidPeriod" ColumnName="ValidPeriod" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="TireloModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sections">
+      <EntityTypeMapping TypeName="TireloModel.Section">
+        <MappingFragment StoreEntitySet="Section">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonCourses">
+      <EntityTypeMapping TypeName="TireloModel.PersonCours">
+        <MappingFragment StoreEntitySet="PersonCourses">
+          <ScalarProperty Name="Date_Completed" ColumnName="Date_Completed" />
+          <ScalarProperty Name="Date_Registered" ColumnName="Date_Registered" />
+          <ScalarProperty Name="fk_Course_Id" ColumnName="fk_Course_Id" />
+          <ScalarProperty Name="fk_Person_Id" ColumnName="fk_Person_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="TireloModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="fk_Manager_Id" ColumnName="fk_Manager_Id" />
+          <ScalarProperty Name="fk_Section_Id" ColumnName="fk_Section_Id" />
+          <ScalarProperty Name="fk_Role_Id" ColumnName="fk_Role_Id" />
+          <ScalarProperty Name="CoyNumber" ColumnName="CoyNumber" />
+          <ScalarProperty Name="Initials" ColumnName="Initials" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
