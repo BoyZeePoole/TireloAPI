@@ -51,5 +51,12 @@ namespace BusinessLayer {
         public IEnumerable<PersonCourse> GetPersonCourses(Guid id) {
             return _CourseRepo.GetPersonCourses(id);
         }
+
+        public Response DeletePersonCourses(
+            string[] ids) {
+            Response response = _CourseRepo.DeletePersonCourses(ids);
+            Save();
+            return response;
+        }
     }
 }

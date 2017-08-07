@@ -17,5 +17,8 @@ namespace ServiceLayer.Interfaces {
         IEnumerable<PersonCourse> GetPersonCourses(
             Guid id);
 
+        Response DeletePersonCourses(
+            string[] ids);
+
     }
 }

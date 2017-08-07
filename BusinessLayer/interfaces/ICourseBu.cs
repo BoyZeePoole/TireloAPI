@@ -19,5 +19,7 @@ namespace BusinessLayer.interfaces {
         IEnumerable<PersonCourse> GetPersonCourses(
             Guid id);
 
+        Response DeletePersonCourses(string[] ids);
+
     }
 }

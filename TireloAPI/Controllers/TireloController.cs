@@ -67,6 +67,12 @@ namespace TireloAPI.Controllers
             return Ok(BussinessCourse.GetPersonCourses(Guid.Parse(id)));
         }
 
+        [HttpPost]
+        [Route("api/deletepersoncourse")]
+        public IHttpActionResult DeletePersonCourse(string[] ids) {
+            return Ok(BussinessCourse.DeletePersonCourses(ids));
+        }
+
         [HttpGet]
         [Route("api/getCourses")]
         public IHttpActionResult GetCourses() {

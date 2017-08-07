@@ -112,5 +112,18 @@ namespace ServiceLayer {
                 Updated = true
             };
         }
+
+        public Response DeletePersonCourses(string[] ids) {
+            foreach (string id in ids) {
+                ServiceLayer.PersonCours pc = _Context.PersonCourses.Find(Guid.Parse(id));
+                if (pc != null) {
+                    _Context.PersonCourses.Remove(pc);
+                }
+            }
+            return new Response {
+                Updated = true,
+                Success = true
+            };
+        }
     }
 }
