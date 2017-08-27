@@ -28,6 +28,7 @@ namespace ServiceLayer
         public Nullable<System.Guid> fk_Role_Id { get; set; }
         public Nullable<System.Guid> fk_Section_Id { get; set; }
         public Nullable<System.Guid> fk_Manager_Id { get; set; }
+        public string Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Person> Subs { get; set; }

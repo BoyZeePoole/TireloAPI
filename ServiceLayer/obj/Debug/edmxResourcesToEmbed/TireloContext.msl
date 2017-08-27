@@ -40,6 +40,7 @@
     <EntitySetMapping Name="People">
       <EntityTypeMapping TypeName="TireloModel.Person">
         <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="fk_Manager_Id" ColumnName="fk_Manager_Id" />
           <ScalarProperty Name="fk_Section_Id" ColumnName="fk_Section_Id" />
           <ScalarProperty Name="fk_Role_Id" ColumnName="fk_Role_Id" />

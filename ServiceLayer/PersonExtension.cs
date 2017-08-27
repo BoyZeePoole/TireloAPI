@@ -14,7 +14,8 @@ namespace ServiceLayer {
                 Role = person.Role,
                 CoyNumber = person.CoyNumber,
                 Surname = person.Surname,
-                Initials = person.Initials
+                Initials = person.Initials,
+                Email = person.Email
             };
         }
 

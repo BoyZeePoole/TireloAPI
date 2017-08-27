@@ -29,7 +29,7 @@ namespace ServiceLayer {
                     Id = pc.Id,
                     Course = ConvertCourse(pc.Course),
                     DateRegistered = pc.Date_Registered,
-                    DateCompleted = Convert.ToDateTime(pc.Date_Completed),
+                    DateCompleted = pc.Date_Completed, // Convert.ToDateTime(pc.Date_Completed),
                     Manager = pc.Person.Manager != null ? ConvertPerson(pc.Person.Manager): null,
                     Employee = pc.Person != null ? ConvertPerson(pc.Person) : null
                 });
@@ -97,7 +97,7 @@ namespace ServiceLayer {
                 }
             }
             else {
-                var personCourseEntity = new ServiceLayer.PersonCours {
+                var personCourseEntity = new PersonCours {
                     Id = Guid.NewGuid(),
                     Person = personEntity,
                     Course = courseEntity,
@@ -115,7 +115,7 @@ namespace ServiceLayer {
 
         public Response DeletePersonCourses(string[] ids) {
             foreach (string id in ids) {
-                ServiceLayer.PersonCours pc = _Context.PersonCourses.Find(Guid.Parse(id));
+                PersonCours pc = _Context.PersonCourses.Find(Guid.Parse(id));
                 if (pc != null) {
                     _Context.PersonCourses.Remove(pc);
                 }

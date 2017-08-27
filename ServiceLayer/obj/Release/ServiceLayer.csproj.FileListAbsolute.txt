@@ -1,0 +1,12 @@
+C:\applications\TireloAPI\ServiceLayer\bin\Release\ServiceLayer.dll.config
+C:\applications\TireloAPI\ServiceLayer\bin\Release\ServiceLayer.dll
+C:\applications\TireloAPI\ServiceLayer\bin\Release\ServiceLayer.pdb
+C:\applications\TireloAPI\ServiceLayer\bin\Release\Domain.dll
+C:\applications\TireloAPI\ServiceLayer\bin\Release\EntityFramework.dll
+C:\applications\TireloAPI\ServiceLayer\bin\Release\EntityFramework.SqlServer.dll
+C:\applications\TireloAPI\ServiceLayer\bin\Release\Domain.pdb
+C:\applications\TireloAPI\ServiceLayer\bin\Release\EntityFramework.xml
+C:\applications\TireloAPI\ServiceLayer\bin\Release\EntityFramework.SqlServer.xml
+C:\applications\TireloAPI\ServiceLayer\obj\Release\ServiceLayer.csprojResolveAssemblyReference.cache
+C:\applications\TireloAPI\ServiceLayer\obj\Release\ServiceLayer.dll
+C:\applications\TireloAPI\ServiceLayer\obj\Release\ServiceLayer.pdb

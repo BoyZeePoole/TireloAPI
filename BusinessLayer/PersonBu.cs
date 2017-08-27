@@ -42,10 +42,12 @@ namespace BusinessLayer {
                 Manager = new Domain.Person {
                     Id = person.fk_Manager_Id,
                     Surname = person.Manager == null ? "***" : person.Manager.Surname,
-                    Initials = person.Manager == null ? "***" : person.Manager.Initials
+                    Initials = person.Manager == null ? "***" : person.Manager.Initials,
+                    Email = person.Email
                 },
                 CoyNumber = person.CoyNumber,
                 Initials = person.Initials,
+                Email = person.Email,
                 Surname = person.Surname
             };
         }

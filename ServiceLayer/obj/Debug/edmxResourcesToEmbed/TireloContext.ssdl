@@ -15,6 +15,7 @@
     <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Surname" Type="varchar(max)" />
     <Property Name="Initials" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
     <Property Name="CoyNumber" Type="varchar(max)" />
     <Property Name="fk_Role_Id" Type="uniqueidentifier" />
     <Property Name="fk_Section_Id" Type="uniqueidentifier" />
@@ -44,18 +45,6 @@
     <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Name" Type="varchar(max)" />
   </EntityType>
-  <Association Name="FK_Person_Person">
-    <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
-    <End Role="Person1" Type="Self.Person" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Person">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Person1">
-        <PropertyRef Name="fk_Manager_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Person_Role">
     <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
     <End Role="Person" Type="Self.Person" Multiplicity="*" />
@@ -110,10 +99,6 @@
     <EntitySet Name="PersonCourses" EntityType="Self.PersonCourses" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Section" EntityType="Self.Section" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Person_Person" Association="Self.FK_Person_Person">
-      <End Role="Person" EntitySet="Person" />
-      <End Role="Person1" EntitySet="Person" />
-    </AssociationSet>
     <AssociationSet Name="FK_Person_Role" Association="Self.FK_Person_Role">
       <End Role="Role" EntitySet="Role" />
       <End Role="Person" EntitySet="Person" />

@@ -32,6 +32,7 @@ namespace ServiceLayer {
                 personEntity.Role = _Context.Roles.Find(person.Role.Id);
                 personEntity.CoyNumber = person.CoyNumber;
                 personEntity.Initials = person.Initials;
+                personEntity.Email = person.Email;
                 personEntity.Surname = person.Surname;
                 personEntity.Manager = manager;
             }

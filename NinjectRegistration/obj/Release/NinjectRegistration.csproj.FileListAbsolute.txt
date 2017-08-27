@@ -1,0 +1,15 @@
+C:\applications\TireloAPI\NinjectRegistration\bin\Release\NinjectRegistration.dll
+C:\applications\TireloAPI\NinjectRegistration\bin\Release\NinjectRegistration.pdb
+C:\applications\TireloAPI\NinjectRegistration\bin\Release\BusinessLayer.dll
+C:\applications\TireloAPI\NinjectRegistration\bin\Release\Ninject.dll
+C:\applications\TireloAPI\NinjectRegistration\bin\Release\ServiceLayer.dll
+C:\applications\TireloAPI\NinjectRegistration\bin\Release\Domain.dll
+C:\applications\TireloAPI\NinjectRegistration\bin\Release\EntityFramework.dll
+C:\applications\TireloAPI\NinjectRegistration\bin\Release\BusinessLayer.pdb
+C:\applications\TireloAPI\NinjectRegistration\bin\Release\ServiceLayer.pdb
+C:\applications\TireloAPI\NinjectRegistration\bin\Release\Ninject.xml
+C:\applications\TireloAPI\NinjectRegistration\bin\Release\Domain.pdb
+C:\applications\TireloAPI\NinjectRegistration\bin\Release\EntityFramework.xml
+C:\applications\TireloAPI\NinjectRegistration\obj\Release\NinjectRegistration.csprojResolveAssemblyReference.cache
+C:\applications\TireloAPI\NinjectRegistration\obj\Release\NinjectRegistration.dll
+C:\applications\TireloAPI\NinjectRegistration\obj\Release\NinjectRegistration.pdb

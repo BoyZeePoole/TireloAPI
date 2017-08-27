@@ -11,6 +11,7 @@ namespace Domain
         public Guid? Id { get; set; }
         public string Surname { get; set; }
         public string Initials { get; set; }
+        public string Email { get; set; }
         public string CoyNumber { get; set; }
         public Role Role { get; set; }
         public Person Manager { get; set; }
