@@ -17,7 +17,7 @@ namespace ServiceLayer
         public System.Guid Id { get; set; }
         public Nullable<System.Guid> fk_Person_Id { get; set; }
         public Nullable<System.Guid> fk_Course_Id { get; set; }
-        public Nullable<System.DateTime> Date_Registered { get; set; }
+        public Nullable<System.DateTime> Date_Expired { get; set; }
         public Nullable<System.DateTime> Date_Completed { get; set; }
     
         public virtual Course Course { get; set; }

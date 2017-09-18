@@ -92,6 +92,7 @@
     <NavigationProperty Name="Role" Relationship="TireloModel.FK_Person_Role" FromRole="Person" ToRole="Role" />
     <NavigationProperty Name="Section" Relationship="TireloModel.FK_Person_Section" FromRole="Person" ToRole="Section" />
     <NavigationProperty Name="PersonCourses" Relationship="TireloModel.FK_PersonCourses_Person" FromRole="Person" ToRole="PersonCours" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <Association Name="FK_Person_Person">
     <End Type="TireloModel.Person" Role="Person" Multiplicity="0..1" />

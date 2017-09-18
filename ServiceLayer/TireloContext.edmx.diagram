@@ -8,12 +8,12 @@
         <EntityTypeShape EntityType="TireloModel.Course" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TireloModel.Role" Width="1.5" PointX="2.5" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="TireloModel.Section" Width="1.5" PointX="6.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TireloModel.PersonCours" Width="1.5" PointX="10.5" PointY="2.125" />
-        <AssociationConnector Association="TireloModel.FK_PersonCourses_Course" />
         <EntityTypeShape EntityType="TireloModel.Person" Width="1.5" PointX="3.75" PointY="0.5" />
         <AssociationConnector Association="TireloModel.FK_Person_Person" />
         <AssociationConnector Association="TireloModel.FK_Person_Role" />
         <AssociationConnector Association="TireloModel.FK_Person_Section" />
+        <EntityTypeShape EntityType="TireloModel.PersonCours" Width="1.5" PointX="10.5" PointY="2" />
+        <AssociationConnector Association="TireloModel.FK_PersonCourses_Course" />
         <AssociationConnector Association="TireloModel.FK_PersonCourses_Person" />
       </Diagram>
     </edmx:Diagrams>

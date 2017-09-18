@@ -28,7 +28,7 @@ namespace ServiceLayer
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Section> Sections { get; set; }
-        public virtual DbSet<PersonCours> PersonCourses { get; set; }
         public virtual DbSet<Person> People { get; set; }
+        public virtual DbSet<PersonCours> PersonCourses { get; set; }
     }
 }

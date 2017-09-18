@@ -12,7 +12,7 @@ namespace Domain {
         public Person Employee { get; set; }
         public Person Manager { get; set; }
         public DateTime? DateCompleted { get; set; }
-        public DateTime? DateRegistered { get; set; }
+        public DateTime? DateExpired { get; set; }
 
     }
 }

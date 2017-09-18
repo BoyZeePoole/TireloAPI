@@ -28,7 +28,7 @@ namespace ServiceLayer {
                 personCourse.Add(new PersonCourse {
                     Id = pc.Id,
                     Course = ConvertCourse(pc.Course),
-                    DateRegistered = pc.Date_Registered,
+                    DateExpired = pc.Date_Expired,
                     DateCompleted = pc.Date_Completed, // Convert.ToDateTime(pc.Date_Completed),
                     Manager = pc.Person.Manager != null ? ConvertPerson(pc.Person.Manager): null,
                     Employee = pc.Person != null ? ConvertPerson(pc.Person) : null
@@ -81,7 +81,7 @@ namespace ServiceLayer {
                 if (personCourseEntity != null) {
                     personCourseEntity.Person = personEntity;
                     personCourseEntity.Course = courseEntity;
-                    personCourseEntity.Date_Registered = personCourse.DateRegistered;
+                    personCourseEntity.Date_Expired = personCourse.DateExpired;
                     personCourseEntity.Date_Completed = personCourse.DateCompleted;
                 }
                 else {
@@ -102,7 +102,7 @@ namespace ServiceLayer {
                     Person = personEntity,
                     Course = courseEntity,
                     Date_Completed = personCourse.DateCompleted,
-                    Date_Registered = personCourse.DateRegistered
+                    Date_Expired = personCourse.DateExpired
                 };
                 _Context.PersonCourses.Add(personCourseEntity);
             }

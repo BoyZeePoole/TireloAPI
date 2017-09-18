@@ -33,7 +33,7 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="fk_Person_Id" Type="uniqueidentifier" />
           <Property Name="fk_Course_Id" Type="uniqueidentifier" />
-          <Property Name="Date_Registered" Type="datetime" />
+          <Property Name="Date_Expired" Type="datetime" />
           <Property Name="Date_Completed" Type="datetime" />
         </EntityType>
         <EntityType Name="Role">
@@ -154,11 +154,6 @@
           <EntitySet Name="Courses" EntityType="Self.Course" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="Sections" EntityType="Self.Section" />
-          <EntitySet Name="PersonCourses" EntityType="TireloModel.PersonCours" />
-          <AssociationSet Name="FK_PersonCourses_Course" Association="TireloModel.FK_PersonCourses_Course">
-            <End Role="Course" EntitySet="Courses" />
-            <End Role="PersonCours" EntitySet="PersonCourses" />
-          </AssociationSet>
           <EntitySet Name="People" EntityType="TireloModel.Person" />
           <AssociationSet Name="FK_Person_Person" Association="TireloModel.FK_Person_Person">
             <End Role="Person" EntitySet="People" />
@@ -172,35 +167,16 @@
             <End Role="Section" EntitySet="Sections" />
             <End Role="Person" EntitySet="People" />
           </AssociationSet>
+          <EntitySet Name="PersonCourses" EntityType="TireloModel.PersonCours" />
+          <AssociationSet Name="FK_PersonCourses_Course" Association="TireloModel.FK_PersonCourses_Course">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="PersonCours" EntitySet="PersonCourses" />
+          </AssociationSet>
           <AssociationSet Name="FK_PersonCourses_Person" Association="TireloModel.FK_PersonCourses_Person">
             <End Role="Person" EntitySet="People" />
             <End Role="PersonCours" EntitySet="PersonCourses" />
           </AssociationSet>
           </EntityContainer>
-        <EntityType Name="PersonCours">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="fk_Person_Id" Type="Guid" />
-          <Property Name="fk_Course_Id" Type="Guid" />
-          <Property Name="Date_Registered" Type="DateTime" Precision="3" />
-          <Property Name="Date_Completed" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Course" Relationship="TireloModel.FK_PersonCourses_Course" FromRole="PersonCours" ToRole="Course" />
-          <NavigationProperty Name="Person" Relationship="TireloModel.FK_PersonCourses_Person" FromRole="PersonCours" ToRole="Person" />
-        </EntityType>
-        <Association Name="FK_PersonCourses_Course">
-          <End Type="TireloModel.Course" Role="Course" Multiplicity="0..1" />
-          <End Type="TireloModel.PersonCours" Role="PersonCours" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Course">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PersonCours">
-              <PropertyRef Name="fk_Course_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Person">
           <Key>
             <PropertyRef Name="Id" />
@@ -216,8 +192,8 @@
           <NavigationProperty Name="Manager" Relationship="TireloModel.FK_Person_Person" FromRole="Person1" ToRole="Person" />
           <NavigationProperty Name="Role" Relationship="TireloModel.FK_Person_Role" FromRole="Person" ToRole="Role" />
           <NavigationProperty Name="Section" Relationship="TireloModel.FK_Person_Section" FromRole="Person" ToRole="Section" />
-          <NavigationProperty Name="PersonCourses" Relationship="TireloModel.FK_PersonCourses_Person" FromRole="Person" ToRole="PersonCours" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PersonCourses" Relationship="TireloModel.FK_PersonCourses_Person" FromRole="Person" ToRole="PersonCours" />
         </EntityType>
         <Association Name="FK_Person_Person">
           <End Type="TireloModel.Person" Role="Person" Multiplicity="0..1" />
@@ -252,6 +228,30 @@
             </Principal>
             <Dependent Role="Person">
               <PropertyRef Name="fk_Section_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PersonCours">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="fk_Person_Id" Type="Guid" />
+          <Property Name="fk_Course_Id" Type="Guid" />
+          <Property Name="Date_Expired" Type="DateTime" Precision="3" />
+          <Property Name="Date_Completed" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Course" Relationship="TireloModel.FK_PersonCourses_Course" FromRole="PersonCours" ToRole="Course" />
+          <NavigationProperty Name="Person" Relationship="TireloModel.FK_PersonCourses_Person" FromRole="PersonCours" ToRole="Person" />
+        </EntityType>
+        <Association Name="FK_PersonCourses_Course">
+          <End Type="TireloModel.Course" Role="Course" Multiplicity="0..1" />
+          <End Type="TireloModel.PersonCours" Role="PersonCours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonCours">
+              <PropertyRef Name="fk_Course_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -298,17 +298,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PersonCourses">
-            <EntityTypeMapping TypeName="TireloModel.PersonCours">
-              <MappingFragment StoreEntitySet="PersonCourses">
-                <ScalarProperty Name="Date_Completed" ColumnName="Date_Completed" />
-                <ScalarProperty Name="Date_Registered" ColumnName="Date_Registered" />
-                <ScalarProperty Name="fk_Course_Id" ColumnName="fk_Course_Id" />
-                <ScalarProperty Name="fk_Person_Id" ColumnName="fk_Person_Id" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="People">
             <EntityTypeMapping TypeName="TireloModel.Person">
               <MappingFragment StoreEntitySet="Person">
@@ -319,6 +308,17 @@
                 <ScalarProperty Name="CoyNumber" ColumnName="CoyNumber" />
                 <ScalarProperty Name="Initials" ColumnName="Initials" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonCourses">
+            <EntityTypeMapping TypeName="TireloModel.PersonCours">
+              <MappingFragment StoreEntitySet="PersonCourses">
+                <ScalarProperty Name="Date_Completed" ColumnName="Date_Completed" />
+                <ScalarProperty Name="Date_Expired" ColumnName="Date_Expired" />
+                <ScalarProperty Name="fk_Course_Id" ColumnName="fk_Course_Id" />
+                <ScalarProperty Name="fk_Person_Id" ColumnName="fk_Person_Id" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
