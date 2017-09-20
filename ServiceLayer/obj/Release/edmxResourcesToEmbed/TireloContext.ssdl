@@ -28,7 +28,7 @@
     <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
     <Property Name="fk_Person_Id" Type="uniqueidentifier" />
     <Property Name="fk_Course_Id" Type="uniqueidentifier" />
-    <Property Name="Date_Registered" Type="datetime" />
+    <Property Name="Date_Expired" Type="datetime" />
     <Property Name="Date_Completed" Type="datetime" />
   </EntityType>
   <EntityType Name="Role">

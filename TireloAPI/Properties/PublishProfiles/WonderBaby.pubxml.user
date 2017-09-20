@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA18J5vhXqmk+RkTNQBl+65gAAAAACAAAAAAADZgAAwAAAABAAAAAdh+jkWu82R/eaNXVhX7O6AAAAAASAAACgAAAAEAAAALesWTwNP2U/KD7eJp+aOXMYAAAAL+ZvsTrYnHeOuO//vg9BfYJtExyvimHwFAAAAH9KUhAevNUXx/cv9Xs/UHJvX6MF</EncryptedPassword>
-    <_PublishTargetUrl>ftp://waws-prod-db3-083.ftp.azurewebsites.windows.net/site\wwwroot</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\DeployedApps\Tirelo</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="apiapp.json">
@@ -20,10 +20,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/17/2017 15:31:50</publishTime>
     </File>
     <File Include="bin/BusinessLayer.dll">
-      <publishTime>08/29/2017 19:56:06</publishTime>
+      <publishTime>09/19/2017 18:57:47</publishTime>
     </File>
     <File Include="bin/Domain.dll">
-      <publishTime>08/29/2017 19:56:05</publishTime>
+      <publishTime>09/19/2017 18:57:46</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 09:32:26</publishTime>
@@ -92,7 +92,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/14/2015 10:54:04</publishTime>
     </File>
     <File Include="bin/NinjectRegistration.dll">
-      <publishTime>08/29/2017 19:56:06</publishTime>
+      <publishTime>09/19/2017 18:57:47</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>11/13/2012 12:19:34</publishTime>
@@ -242,7 +242,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/07/2017 16:33:34</publishTime>
     </File>
     <File Include="bin/ServiceLayer.dll">
-      <publishTime>08/29/2017 19:56:06</publishTime>
+      <publishTime>09/19/2017 18:57:47</publishTime>
     </File>
     <File Include="bin/Swashbuckle.Core.dll">
       <publishTime>02/15/2015 17:57:08</publishTime>
@@ -269,7 +269,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/28/2015 04:03:46</publishTime>
     </File>
     <File Include="bin/TireloAPI.dll">
-      <publishTime>08/29/2017 19:56:11</publishTime>
+      <publishTime>09/19/2017 18:57:55</publishTime>
     </File>
     <File Include="bin/WebActivatorEx.dll">
       <publishTime>10/05/2016 13:11:52</publishTime>
@@ -284,7 +284,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/27/2017 17:28:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/24/2017 11:52:17</publishTime>
+      <publishTime>09/19/2017 20:02:46</publishTime>
     </File>
   </ItemGroup>
 </Project>
