@@ -20,5 +20,7 @@ namespace ServiceLayer.Interfaces {
         Response DeletePersonCourses(
             string[] ids);
 
+        Response DeletePerson(string id);
+
     }
 }

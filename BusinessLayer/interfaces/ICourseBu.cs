@@ -20,6 +20,6 @@ namespace BusinessLayer.interfaces {
             Guid id);
 
         Response DeletePersonCourses(string[] ids);
-
+        Response DeletePerson(string id);
     }
 }

@@ -58,5 +58,10 @@ namespace BusinessLayer {
             Save();
             return response;
         }
+
+        public Response DeletePerson(string id)
+        {
+            return _CourseRepo.DeletePerson(id);
+        }
     }
 }

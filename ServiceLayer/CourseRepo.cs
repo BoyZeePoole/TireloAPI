@@ -125,5 +125,30 @@ namespace ServiceLayer {
                 Success = true
             };
         }
+
+        public Response DeletePerson(string id)
+        {
+            try
+            {
+                Guid personId = new Guid(id);
+                var personCourses = _Context.PersonCourses.Where(x => x.fk_Person_Id == personId);
+                _Context.PersonCourses.RemoveRange(personCourses);
+                var person = _Context.People.Find(personId);
+                _Context.People.Remove(person);
+                Save();
+            }
+            catch (Exception ex)
+            {
+                return new Response {
+                    Updated = false,
+                    Success = false
+                };
+            }
+
+            return new Response {
+                Updated = true,
+                Success = true
+            };
+        }
     }
 }

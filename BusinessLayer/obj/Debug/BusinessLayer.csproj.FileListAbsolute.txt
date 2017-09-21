@@ -9,3 +9,16 @@ C:\applications\TireloAPI\BusinessLayer\bin\Debug\EntityFramework.xml
 C:\applications\TireloAPI\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
 C:\applications\TireloAPI\BusinessLayer\obj\Debug\BusinessLayer.dll
 C:\applications\TireloAPI\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\applications\TireloAPI\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\applications\TireloAPI\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\applications\TireloAPI\BusinessLayer\bin\Debug\Domain.dll
+D:\applications\TireloAPI\BusinessLayer\bin\Debug\ServiceLayer.dll
+D:\applications\TireloAPI\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\applications\TireloAPI\BusinessLayer\bin\Debug\Domain.pdb
+D:\applications\TireloAPI\BusinessLayer\bin\Debug\ServiceLayer.pdb
+D:\applications\TireloAPI\BusinessLayer\bin\Debug\ServiceLayer.dll.config
+D:\applications\TireloAPI\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\applications\TireloAPI\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\applications\TireloAPI\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+D:\applications\TireloAPI\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\applications\TireloAPI\BusinessLayer\obj\Debug\BusinessLayer.pdb

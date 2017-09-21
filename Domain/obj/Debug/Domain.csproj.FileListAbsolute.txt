@@ -3,3 +3,9 @@ C:\applications\TireloAPI\Domain\bin\Debug\Domain.pdb
 C:\applications\TireloAPI\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 C:\applications\TireloAPI\Domain\obj\Debug\Domain.dll
 C:\applications\TireloAPI\Domain\obj\Debug\Domain.pdb
+D:\applications\TireloAPI\Domain\bin\Debug\Domain.dll
+D:\applications\TireloAPI\Domain\bin\Debug\Domain.pdb
+D:\applications\TireloAPI\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+D:\applications\TireloAPI\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+D:\applications\TireloAPI\Domain\obj\Debug\Domain.dll
+D:\applications\TireloAPI\Domain\obj\Debug\Domain.pdb

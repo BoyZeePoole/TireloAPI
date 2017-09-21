@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Results;
 
 namespace TireloAPI.Controllers
 {
@@ -61,12 +62,20 @@ namespace TireloAPI.Controllers
             return BussinessCourse.UpsertPersonCourse(personCourse);
         }
 
+
+
         [HttpGet]
         [Route("api/getpersoncourse")]
         public IHttpActionResult GetPersonCourse(string id) {
             return Ok(BussinessCourse.GetPersonCourses(Guid.Parse(id)));
         }
 
+        [HttpPost]
+        [Route("api/deleteperson")]
+        public OkNegotiatedContentResult<Response> DeletePerson(string id)
+        {
+            return Ok(BussinessCourse.DeletePerson(id));
+        }
         [HttpPost]
         [Route("api/deletepersoncourse")]
         public IHttpActionResult DeletePersonCourse(string[] ids) {
