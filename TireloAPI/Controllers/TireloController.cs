@@ -8,8 +8,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Results;
 
-namespace TireloAPI.Controllers
-{
+namespace TireloAPI.Controllers {
     public class TireloController : ApiController {
 
         private IRoleBu BusinessRole { get; }
@@ -70,10 +69,9 @@ namespace TireloAPI.Controllers
             return Ok(BussinessCourse.GetPersonCourses(Guid.Parse(id)));
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("api/deleteperson")]
-        public OkNegotiatedContentResult<Response> DeletePerson(string id)
-        {
+        public IHttpActionResult DeletePerson(string id) {
             return Ok(BussinessCourse.DeletePerson(id));
         }
         [HttpPost]

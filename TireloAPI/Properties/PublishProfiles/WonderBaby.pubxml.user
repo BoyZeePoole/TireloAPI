@@ -20,7 +20,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/17/2017 15:31:50</publishTime>
     </File>
     <File Include="bin/BusinessLayer.dll">
-      <publishTime>09/19/2017 18:57:47</publishTime>
+      <publishTime>09/21/2017 07:20:21</publishTime>
     </File>
     <File Include="bin/Domain.dll">
       <publishTime>09/19/2017 18:57:46</publishTime>
@@ -92,7 +92,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/14/2015 10:54:04</publishTime>
     </File>
     <File Include="bin/NinjectRegistration.dll">
-      <publishTime>09/19/2017 18:57:47</publishTime>
+      <publishTime>09/21/2017 07:20:21</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>11/13/2012 12:19:34</publishTime>
@@ -242,7 +242,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/07/2017 16:33:34</publishTime>
     </File>
     <File Include="bin/ServiceLayer.dll">
-      <publishTime>09/19/2017 18:57:47</publishTime>
+      <publishTime>09/21/2017 07:20:21</publishTime>
     </File>
     <File Include="bin/Swashbuckle.Core.dll">
       <publishTime>02/15/2015 17:57:08</publishTime>
@@ -269,7 +269,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/28/2015 04:03:46</publishTime>
     </File>
     <File Include="bin/TireloAPI.dll">
-      <publishTime>09/19/2017 18:57:55</publishTime>
+      <publishTime>09/21/2017 07:20:27</publishTime>
     </File>
     <File Include="bin/WebActivatorEx.dll">
       <publishTime>10/05/2016 13:11:52</publishTime>

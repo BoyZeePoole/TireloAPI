@@ -188,3 +188,4 @@ D:\applications\TireloAPI\TireloAPI.Tests\obj\Debug\TireloAPI.Tests.csprojResolv
 D:\applications\TireloAPI\TireloAPI.Tests\obj\Debug\TireloAPI.Tests.csproj.CoreCompileInputs.cache
 D:\applications\TireloAPI\TireloAPI.Tests\obj\Debug\TireloAPI.Tests.dll
 D:\applications\TireloAPI\TireloAPI.Tests\obj\Debug\TireloAPI.Tests.pdb
+C:\applications\TireloAPI\TireloAPI.Tests\bin\Debug\Newtonsoft.Json.dll
